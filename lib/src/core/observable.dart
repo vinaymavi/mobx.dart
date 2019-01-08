@@ -21,7 +21,7 @@ class Observable<T> extends Atom implements Interceptable<T>, Listenable<T> {
   Observable._(ReactiveContext context, this._value, {String name})
       : _interceptors = Interceptors(context),
         _listeners = Listeners(context),
-        super(context, name: name ?? context.nameFor('Observable'));
+        super._(context, name: name ?? context.nameFor('Observable'));
 
   final Interceptors<T> _interceptors;
   final Listeners<T> _listeners;

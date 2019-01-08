@@ -33,7 +33,7 @@ class Computed<T> extends Atom implements Derivation {
       Computed._(context ?? currentContext, compute, name: name);
 
   Computed._(ReactiveContext context, this._fn, {String name})
-      : super(context, name: name ?? context.nameFor('Computed'));
+      : super._(context, name: name ?? context.nameFor('Computed'));
 
   @override
   // ignore: prefer_final_fields

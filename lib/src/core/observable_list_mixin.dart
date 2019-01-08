@@ -1,7 +1,7 @@
 part of '../core.dart';
 
 mixin ObservableListMixin<T> implements List<Observable<T>> {
-  final _atom = createAtom(name: 'ObservableArray');
+  final _atom = Atom(name: 'ObservableArray');
   final _list = <Observable<T>>[];
 
   @override
