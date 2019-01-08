@@ -106,7 +106,7 @@ void main() {
 
   test('onBecomeObserved/onBecomeUnobserved works for computeds', () {
     final x = Observable(10);
-    final x1 = computed(() {
+    final x1 = Computed(() {
       // ignore: unnecessary_statements
       x.value + 1;
     });
