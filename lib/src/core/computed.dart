@@ -1,7 +1,7 @@
 part of '../core.dart';
 
-class ComputedValue<T> extends Atom implements Derivation {
-  ComputedValue(ReactiveContext context, this._fn, {String name})
+class Computed<T> extends Atom implements Derivation {
+  Computed(ReactiveContext context, this._fn, {String name})
       : super(context, name: name ?? context.nameFor('Computed'));
 
   @override

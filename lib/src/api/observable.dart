@@ -27,9 +27,9 @@ import 'package:mobx/src/core.dart';
 /// A computed value is _cached_ and it recomputes only when the dependent observables actually
 /// change. This makes them fast and you are free to use them throughout your application. Internally
 /// MobX uses a 2-phase change propagation that ensures no unnecessary computations are performed.
-ComputedValue<T> computed<T>(T Function() fn,
+Computed<T> computed<T>(T Function() fn,
         {String name, ReactiveContext context}) =>
-    ComputedValue(context ?? currentContext, fn, name: name);
+    Computed(context ?? currentContext, fn, name: name);
 
 /// Creates a simple Atom for tracking its usage in a reactive context. This is useful when
 /// you don't need the value but instead a way of knowing when it becomes active and inactive
