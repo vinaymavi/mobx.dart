@@ -69,7 +69,7 @@ void main() {
     d();
   });
 
-  test('computed can be observed', () {
+  test('Computed can be observed', () {
     final x = Observable(10);
     final y = Observable(20);
 
@@ -92,7 +92,7 @@ void main() {
     expect(executionCount, equals(1));
   });
 
-  test('computed uses provided context', () {
+  test('Computed uses provided context', () {
     final context = MockContext();
     int fn() => 1;
 

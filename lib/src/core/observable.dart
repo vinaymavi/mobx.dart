@@ -7,13 +7,13 @@ class Observable<T> extends Atom implements Interceptable<T>, Listenable<T> {
   /// they are implicitly added as a dependency of the reaction. When its value changes
   /// the linked reaction is re-triggered.
   ///
-  /// An observable's value is read with the `value` property.
+  /// An Observable's value is read with the `value` property.
   ///
   /// ```
-  /// var x = observable(10);
-  /// var message = observable('hello');
+  /// var x = Observable(10);
+  /// var message = Observable('hello');
   ///
-  /// print('x = ${x.value}'); // read an observable's value
+  /// print('x = ${x.value}'); // read an Observable's value
   /// ```
   factory Observable(T initialValue, {String name, ReactiveContext context}) =>
       Observable._(context ?? currentContext, initialValue, name: name);

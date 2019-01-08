@@ -104,7 +104,7 @@ void main() {
     d2();
   });
 
-  test('onBecomeObserved/onBecomeUnobserved works for computeds', () {
+  test('onBecomeObserved/onBecomeUnobserved works for Computeds', () {
     final x = Observable(10);
     final x1 = Computed(() {
       // ignore: unnecessary_statements

@@ -6,7 +6,7 @@ part of '../core.dart';
 /// value from other observables. Don't underestimate the power of the **computed**.
 /// They are possibly the most powerful observables in your application.
 ///
-/// A computed's value is read with the [value] property.
+/// A Computed's value is read with the [value] property.
 ///
 /// ```
 /// var x = Observable(10);

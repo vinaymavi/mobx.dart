@@ -23,7 +23,7 @@ void main() {
     expect(str.value, equals('mobx'));
   });
 
-  test('createAtom works', () {
+  test('Atom creation works', () {
     var executionCount = 0;
     final a = Atom(
         name: 'test',
@@ -44,7 +44,7 @@ void main() {
     expect(executionCount, equals(2)); // onBecomeUnobserved gets called
   });
 
-  test('createAtom provides a default name', () {
+  test('Atom provides a default name', () {
     final a = Atom();
 
     expect(a.name, startsWith('Atom@'));
