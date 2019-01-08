@@ -8,7 +8,7 @@ import 'shared_mocks.dart';
 void main() {
   test('Reaction basics', () {
     var executed = false;
-    final x = observable(10);
+    final x = Observable(10);
     final d = reaction((_) => x.value > 10, (isGreaterThan10) {
       executed = true;
     }, name: 'Basic Reaction');
@@ -30,7 +30,7 @@ void main() {
   });
 
   test('Reaction with delay', () {
-    final x = observable(10);
+    final x = Observable(10);
     var executed = false;
 
     final d = reaction((_) => x.value > 10, (isGreaterThan10) {
@@ -52,7 +52,7 @@ void main() {
   });
 
   test('Reaction that fires immediately', () {
-    final x = observable(10);
+    final x = Observable(10);
     var executed = false;
 
     final d = reaction((_) => x.value > 10, (isGreaterThan10) {
@@ -64,7 +64,7 @@ void main() {
   });
 
   test('Reaction that fires immediately with delay', () {
-    final x = observable(10);
+    final x = Observable(10);
     var executed = false;
 
     final d = reaction((_) => x.value > 10, (isGreaterThan10) {
@@ -97,7 +97,7 @@ void main() {
   });
 
   test('reaction with pre-mature disposal in predicate', () {
-    final x = observable(10);
+    final x = Observable(10);
     var executed = false;
 
     final d = reaction((reaction) {

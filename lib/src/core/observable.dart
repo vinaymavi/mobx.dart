@@ -1,7 +1,24 @@
 part of '../core.dart';
 
 class Observable<T> extends Atom implements Interceptable<T>, Listenable<T> {
-  Observable(ReactiveContext context, this._value, {String name})
+  /// Create an observable value with an [initialValue] and an optional [name]
+  ///
+  /// Observable values are tracked inside MobX. When a reaction uses them
+  /// they are implicitly added as a dependency of the reaction. When its value changes
+  /// the linked reaction is re-triggered.
+  ///
+  /// An observable's value is read with the `value` property.
+  ///
+  /// ```
+  /// var x = observable(10);
+  /// var message = observable('hello');
+  ///
+  /// print('x = ${x.value}'); // read an observable's value
+  /// ```
+  factory Observable(T initialValue, {String name, ReactiveContext context}) =>
+      Observable._(context ?? currentContext, initialValue, name: name);
+
+  Observable._(ReactiveContext context, this._value, {String name})
       : _interceptors = Interceptors(context),
         _listeners = Listeners(context),
         super(context, name: name ?? context.nameFor('Observable'));

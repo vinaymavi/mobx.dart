@@ -1,6 +1,5 @@
 import 'package:fake_async/fake_async.dart';
-import 'package:mobx/src/api/observable.dart';
-import 'package:mobx/src/api/reaction.dart';
+import 'package:mobx/mobx.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 
@@ -8,7 +7,7 @@ import 'shared_mocks.dart';
 
 void main() {
   test('autorun', () {
-    final c = observable(0);
+    final c = Observable(0);
     int nextValue;
 
     final dispose = autorun((_) {
@@ -29,8 +28,8 @@ void main() {
   });
 
   test('autorun with 2 observables', () {
-    final x = observable('Hello');
-    final y = observable('Pavan');
+    final x = Observable('Hello');
+    final y = Observable('Pavan');
     String message;
 
     final dispose = autorun((_) {
@@ -49,8 +48,8 @@ void main() {
   });
 
   test('autorun with changing observables', () {
-    final x = observable(10);
-    final y = observable(20);
+    final x = Observable(10);
+    final y = Observable(20);
     int value;
 
     final dispose = autorun((_) {
@@ -69,7 +68,7 @@ void main() {
     Function dispose;
     const delayMs = 5000;
 
-    final x = observable(10);
+    final x = Observable(10);
     var value = 0;
 
     fakeAsync((async) {
@@ -96,7 +95,7 @@ void main() {
   });
 
   test('autorun with pre-mature disposal in predicate', () {
-    final x = observable(10);
+    final x = Observable(10);
 
     final d = autorun((reaction) {
       final isGreaterThan10 = x.value > 10;

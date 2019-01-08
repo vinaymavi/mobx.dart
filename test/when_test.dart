@@ -7,7 +7,7 @@ import 'shared_mocks.dart';
 void main() {
   test('When', () {
     var executed = false;
-    final x = observable(10);
+    final x = Observable(10);
     final d = when(() => x.value > 10, () {
       executed = true;
     }, name: 'Basic when');
@@ -34,7 +34,7 @@ void main() {
   });
 
   test('Async When', () {
-    final x = observable(10);
+    final x = Observable(10);
     asyncWhen(() => x.value > 10, name: 'Async-when').then((_) {
       expect(true, isTrue);
     });

@@ -7,7 +7,7 @@ import 'shared_mocks.dart';
 
 void main() {
   test('intercept', () {
-    final x = observable(10);
+    final x = Observable(10);
     var executed = false;
 
     final dispose = x.intercept((change) {
@@ -25,7 +25,7 @@ void main() {
   });
 
   test('intercept prevents a change', () {
-    final x = observable(10);
+    final x = Observable(10);
 
     final dispose = x.intercept((change) => null);
 
@@ -36,7 +36,7 @@ void main() {
   });
 
   test('intercept can be chained', () {
-    final x = observable(10);
+    final x = Observable(10);
 
     final dispose1 = x.intercept((change) {
       change.newValue = change.newValue + 10;
@@ -56,7 +56,7 @@ void main() {
   });
 
   test('intercept chain can be short-circuited', () {
-    final x = observable(10);
+    final x = Observable(10);
 
     final dispose1 = x.intercept((change) {
       change.newValue = change.newValue + 10;

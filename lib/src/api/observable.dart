@@ -1,23 +1,5 @@
 import 'package:mobx/src/core.dart';
 
-/// Create an observable value with an [initialValue] and an optional [name]
-///
-/// Observable values are tracked inside MobX. When a reaction uses them
-/// they are implicitly added as a dependency of the reaction. When its value changes
-/// the linked reaction is re-triggered.
-///
-/// An observable's value is read with the `value` property.
-///
-/// ```
-/// var x = observable(10);
-/// var message = observable('hello');
-///
-/// print('x = ${x.value}'); // read an observable's value
-/// ```
-Observable<T> observable<T>(T initialValue,
-        {String name, ReactiveContext context}) =>
-    Observable(context ?? currentContext, initialValue, name: name);
-
 /// Creates a computed value with an optional [name].
 ///
 /// The passed in function: [fn], is used to give back the computed value.

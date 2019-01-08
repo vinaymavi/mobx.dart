@@ -11,11 +11,11 @@ void main() {
       i++;
     });
 
-    final var1 = observable(0);
-    final var2 = observable(0);
+    final var1 = Observable(0);
+    final var2 = Observable(0);
 
     tracker.start();
-    final var3 = observable(0);
+    final var3 = Observable(0);
     var1.value;
     tracker.end();
 
@@ -46,7 +46,7 @@ void main() {
     final tracker = DerivationTracker(currentContext, () {
       i++;
     });
-    final var1 = observable(0);
+    final var1 = Observable(0);
 
     tracker.start();
     var1.value;
@@ -64,7 +64,7 @@ void main() {
     var1.value += 1;
     expect(i, equals(2));
 
-    final var2 = observable(0);
+    final var2 = Observable(0);
     tracker.start();
     var2.value;
     tracker.end();
@@ -78,7 +78,7 @@ void main() {
     final tracker = DerivationTracker(currentContext, () {
       i++;
     });
-    final var1 = observable(0);
+    final var1 = Observable(0);
 
     tracker.start();
     var1.value;
@@ -95,7 +95,7 @@ void main() {
     final tracker = DerivationTracker(currentContext, () {
       i++;
     });
-    final var1 = observable(0);
+    final var1 = Observable(0);
 
     tracker..start()..start()..start();
 
@@ -116,7 +116,7 @@ void main() {
     final tracker = DerivationTracker(currentContext, () {
       i++;
     });
-    final var1 = observable(0);
+    final var1 = Observable(0);
 
     tracker.start();
     var1.value;
@@ -133,7 +133,7 @@ void main() {
     final tracker = DerivationTracker(currentContext, () {
       i++;
     });
-    final var1 = observable(0);
+    final var1 = Observable(0);
 
     tracker.start();
     var1.value;
@@ -151,7 +151,7 @@ void main() {
     final tracker = DerivationTracker(currentContext, () {
       i++;
     });
-    final var1 = observable(0);
+    final var1 = Observable(0);
 
     tracker.start();
     var1.value;

@@ -6,7 +6,7 @@ import 'shared_mocks.dart';
 
 void main() {
   test('Basic observable<T>', () {
-    final x = observable<int>(null);
+    final x = Observable<int>(null);
     expect(x.value, equals(null));
 
     x.value = 100;
@@ -14,27 +14,13 @@ void main() {
 
     expect(x.name, startsWith('Observable@'));
 
-    final str = observable('hello', name: 'greeting');
+    final str = Observable('hello', name: 'greeting');
     expect(str is Observable<String>, isTrue);
     expect(str.value, equals('hello'));
     expect(str.name, equals('greeting'));
 
     str.value = 'mobx';
     expect(str.value, equals('mobx'));
-  });
-
-  test('Raw observables', () {
-    final x = Observable(currentContext, 1000);
-    expect(x is Observable<int>, isTrue);
-
-    expect(x.value, equals(1000));
-
-    final x1 = Observable<int>(currentContext, null);
-    expect(x1.value, isNull);
-
-    final y = Observable(currentContext, 'Hello', name: 'greeting');
-    expect(y.value, equals('Hello'));
-    expect(y.name, equals('greeting'));
   });
 
   test('createAtom works', () {
@@ -66,7 +52,7 @@ void main() {
 
   test('observable uses provided context', () {
     final context = MockContext();
-    final value = observable(0, context: context)..value += 1;
+    final value = Observable(0, context: context)..value += 1;
 
     verify(context.startBatch());
     verify(context.propagateChanged(value));

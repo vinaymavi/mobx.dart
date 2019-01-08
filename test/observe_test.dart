@@ -3,7 +3,7 @@ import 'package:test/test.dart';
 
 void main() {
   test('observe', () {
-    final x = observable(10);
+    final x = Observable(10);
     var executed = false;
 
     final dispose = x.observe((change) {
@@ -18,7 +18,7 @@ void main() {
   });
 
   test('observe fires when changed', () {
-    final x = observable(10);
+    final x = Observable(10);
     var executed = false;
 
     final dispose = x.observe((change) {
@@ -36,7 +36,7 @@ void main() {
   });
 
   test('observe can be disposed', () {
-    final x = observable(10);
+    final x = Observable(10);
     var executed = false;
 
     final dispose = x.observe((change) {
@@ -53,7 +53,7 @@ void main() {
   });
 
   test('observe can have multiple listeners', () {
-    final x = observable(10);
+    final x = Observable(10);
     var executionCount = 0;
 
     final dispose1 = x.observe((change) {
@@ -80,7 +80,7 @@ void main() {
   });
 
   test('onBecomeObserved/onBecomeUnobserved works for observables', () {
-    final x = observable(10);
+    final x = Observable(10);
     var executionCount = 0;
 
     final d1 = x.onBecomeObserved(() {
@@ -105,7 +105,7 @@ void main() {
   });
 
   test('onBecomeObserved/onBecomeUnobserved works for computeds', () {
-    final x = observable(10);
+    final x = Observable(10);
     final x1 = computed(() {
       // ignore: unnecessary_statements
       x.value + 1;
@@ -134,7 +134,7 @@ void main() {
   });
 
   test('onBecomeObserved/onBecomeUnobserved throws if null is passed', () {
-    final x = observable(10);
+    final x = Observable(10);
 
     expect(() {
       x.onBecomeObserved(null);
