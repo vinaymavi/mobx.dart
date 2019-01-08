@@ -1,4 +1,3 @@
-import 'package:mobx/src/api/context.dart';
 import 'package:mobx/src/core.dart';
 
 /// Create an observable value with an [initialValue] and an optional [name]
