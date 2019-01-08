@@ -1,8 +1,7 @@
 part of '../core.dart';
 
-class ObservableValue<T> extends Atom
-    implements Interceptable<T>, Listenable<T> {
-  ObservableValue(ReactiveContext context, this._value, {String name})
+class Observable<T> extends Atom implements Interceptable<T>, Listenable<T> {
+  Observable(ReactiveContext context, this._value, {String name})
       : _interceptors = Interceptors(context),
         _listeners = Listeners(context),
         super(context, name: name ?? context.nameFor('Observable'));

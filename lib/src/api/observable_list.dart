@@ -14,4 +14,4 @@ import 'package:mobx/src/core.dart';
 /// ```
 class ObservableList<T>
     with ObservableListMixin<T>
-    implements List<ObservableValue<T>> {}
+    implements List<Observable<T>> {}

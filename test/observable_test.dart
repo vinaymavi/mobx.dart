@@ -15,7 +15,7 @@ void main() {
     expect(x.name, startsWith('Observable@'));
 
     final str = observable('hello', name: 'greeting');
-    expect(str is ObservableValue<String>, isTrue);
+    expect(str is Observable<String>, isTrue);
     expect(str.value, equals('hello'));
     expect(str.name, equals('greeting'));
 
@@ -24,15 +24,15 @@ void main() {
   });
 
   test('Raw observables', () {
-    final x = ObservableValue(currentContext, 1000);
-    expect(x is ObservableValue<int>, isTrue);
+    final x = Observable(currentContext, 1000);
+    expect(x is Observable<int>, isTrue);
 
     expect(x.value, equals(1000));
 
-    final x1 = ObservableValue<int>(currentContext, null);
+    final x1 = Observable<int>(currentContext, null);
     expect(x1.value, isNull);
 
-    final y = ObservableValue(currentContext, 'Hello', name: 'greeting');
+    final y = Observable(currentContext, 'Hello', name: 'greeting');
     expect(y.value, equals('Hello'));
     expect(y.name, equals('greeting'));
   });

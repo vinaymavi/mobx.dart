@@ -14,9 +14,9 @@ import 'package:mobx/src/core.dart';
 ///
 /// print('x = ${x.value}'); // read an observable's value
 /// ```
-ObservableValue<T> observable<T>(T initialValue,
+Observable<T> observable<T>(T initialValue,
         {String name, ReactiveContext context}) =>
-    ObservableValue(context ?? currentContext, initialValue, name: name);
+    Observable(context ?? currentContext, initialValue, name: name);
 
 /// Creates a computed value with an optional [name].
 ///
